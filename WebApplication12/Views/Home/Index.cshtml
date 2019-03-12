@@ -1,0 +1,25 @@
+﻿@model WebApplication12.Controllers.HomePageViewModel
+
+<div class="row">
+    <form>
+        <div class="col-md-10">
+            <input type="text" value="@Model.Text" class="form-control input-lg" name="text" placeholder="Enter Text" />
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success btn-lg">Run it</button>
+        </div>
+    </form>
+</div>
+
+@if (Model.CharacterCounts != null)
+{
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            @foreach (KeyValuePair<char, int> kvp in Model.CharacterCounts)
+            {
+                <h3>There are @kvp.Value @kvp.Key's</h3>
+            }
+        </div>
+    </div>
+
+}
